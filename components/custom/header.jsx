@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,6 +17,12 @@ export const Header = () => {
                 </Link>
                 <div className="flex items-center gap-4">
                     {/* TODO: add login btn and other cta */}
+                    <SignedOut>
+                        <SignInButton />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
             </nav>
         </header>
